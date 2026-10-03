@@ -783,3 +783,349 @@ tbody td {
     border-radius: 13px;
   }
 }
+
+
+/* ---------------------------------
+   Phone layout — <= 767px only
+   Tablet (768px+) keeps the existing layout.
+--------------------------------- */
+
+@media (max-width: 767px) {
+  html,
+  body,
+  #root {
+    width: 100%;
+    min-width: 320px;
+    overflow-x: hidden;
+  }
+
+  .dashboard-page {
+    width: 100% !important;
+    min-height: 100vh;
+    display: block !important;
+    overflow-x: hidden;
+  }
+
+  /* Turn the desktop sidebar into a compact top navigation area. */
+  .sidebar {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    display: block !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 8px 24px rgba(7, 27, 16, 0.10) !important;
+  }
+
+  .sidebar-brand {
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 16px 12px !important;
+  }
+
+  .sidebar-lion {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    border-radius: 14px;
+    font-size: 22px;
+  }
+
+  .sidebar-brand h1 {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.1;
+    letter-spacing: 0.07em;
+  }
+
+  .sidebar-brand p {
+    margin: 4px 0 0;
+    font-size: 7px;
+    line-height: 1.35;
+    letter-spacing: 0.09em;
+  }
+
+  .sidebar-section-label {
+    display: none !important;
+  }
+
+  .sidebar-nav {
+    display: flex !important;
+    align-items: stretch;
+    gap: 7px !important;
+    padding: 0 12px 12px !important;
+    margin: 0 !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .sidebar-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sidebar-link {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: max-content;
+    min-height: 42px !important;
+    padding: 0 11px !important;
+    border-radius: 12px !important;
+    white-space: nowrap;
+  }
+
+  .sidebar-link .sidebar-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 9px;
+    font-size: 12px;
+  }
+
+  .sidebar-bottom {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    padding: 0 12px 12px !important;
+  }
+
+  .sidebar-user {
+    min-width: 0;
+    flex: 1 1 auto;
+    padding: 9px !important;
+    border-radius: 13px !important;
+  }
+
+  .sidebar-user .user-details {
+    min-width: 0;
+  }
+
+  .sidebar-user .user-details strong,
+  .sidebar-user .user-details span {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .sidebar-logout {
+    flex: 0 0 auto;
+    min-height: 42px;
+    padding: 0 13px !important;
+    border-radius: 12px !important;
+    white-space: nowrap;
+  }
+
+  .dashboard-main {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+
+  .dashboard-topbar {
+    position: sticky !important;
+    top: 0;
+    z-index: 20;
+    width: 100%;
+    min-height: 64px !important;
+    box-sizing: border-box;
+    padding: 11px 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+    overflow: hidden;
+  }
+
+  .dashboard-topbar > div:first-child {
+    min-width: 0;
+  }
+
+  .topbar-label {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 8px !important;
+    letter-spacing: 0.11em;
+  }
+
+  .dashboard-topbar h2 {
+    margin: 3px 0 0 !important;
+    font-size: 20px !important;
+    line-height: 1.05;
+  }
+
+  .topbar-user {
+    flex: 0 0 auto;
+    max-width: 48%;
+    padding: 5px 8px 5px 6px !important;
+    border-radius: 12px !important;
+  }
+
+  .topbar-user > div:last-child {
+    min-width: 0;
+  }
+
+  .topbar-user strong,
+  .topbar-user span {
+    display: block;
+    max-width: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .topbar-user strong {
+    font-size: 11px !important;
+  }
+
+  .topbar-user span {
+    font-size: 8px !important;
+  }
+
+  .dashboard-content {
+    width: calc(100% - 20px) !important;
+    max-width: none !important;
+    margin: 0 auto !important;
+    padding: 18px 0 30px !important;
+    box-sizing: border-box;
+  }
+
+  .dashboard-welcome {
+    padding: 20px !important;
+    min-height: 0 !important;
+  }
+
+  .dashboard-welcome > div:first-child {
+    min-width: 0;
+  }
+
+  .dashboard-welcome h3 {
+    max-width: 100%;
+    font-size: clamp(24px, 7vw, 32px) !important;
+    line-height: 1.05;
+  }
+
+  .dashboard-welcome p {
+    max-width: 100%;
+    font-size: 12px !important;
+    line-height: 1.55;
+  }
+
+  .overview-heading {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    flex-wrap: wrap;
+  }
+
+  .academic-badge {
+    flex: 0 0 auto;
+    padding: 9px 11px;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dashboard-stat {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .dashboard-grid-main {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dashboard-panel {
+    min-width: 0;
+  }
+
+  .panel-header {
+    gap: 10px !important;
+  }
+
+  .panel-action {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .room-row {
+    grid-template-columns: minmax(72px, 0.8fr) minmax(90px, 1.5fr) minmax(62px, 0.7fr) !important;
+    gap: 9px !important;
+  }
+
+  .room-name,
+  .room-capacity {
+    min-width: 0;
+  }
+
+  .room-name strong,
+  .room-name span,
+  .room-capacity strong,
+  .room-capacity span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .quick-actions {
+    grid-template-columns: 1fr !important;
+  }
+
+  .quick-action {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .section-hero {
+    padding: 18px !important;
+    display: flex !important;
+    align-items: flex-start !important;
+  }
+
+  .section-hero > div:last-child {
+    min-width: 0;
+  }
+
+  .section-hero h3 {
+    font-size: 24px !important;
+  }
+
+  .section-hero p {
+    font-size: 12px !important;
+  }
+
+  .section-placeholder {
+    padding: 20px !important;
+  }
+
+  input,
+  select,
+  textarea {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Prevent long tables/content from forcing the page wider than the phone. */
+  .dashboard-content,
+  .section-page,
+  .dashboard-panel,
+  .section-hero,
+  .section-placeholder {
+    overflow-x: hidden;
+  }
+}
